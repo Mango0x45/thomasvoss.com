@@ -1,0 +1,7 @@
+emacs-27.2/
+pkg/
+pub/
+site/fonts/
+.org-timestamps/
+
+LAYOUT

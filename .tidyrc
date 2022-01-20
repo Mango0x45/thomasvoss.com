@@ -1,0 +1,9 @@
+clean: yes
+logical-emphasis: yes
+numeric-entities: yes
+output-html: yes
+quiet: yes
+show-warnings: no
+tidy-mark: no
+warn-proprietary-attributes: no
+wrap: 100

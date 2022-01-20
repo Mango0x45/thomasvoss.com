@@ -1,0 +1,15 @@
+graph {
+	bgcolor = transparent
+	center  = 1
+	layout  = circo
+	mindist = 0.3
+	root    = "/"
+
+	edge [color="#7BC275"]
+	node [shape=rect style="filled,rounded" fontname="Fira Mono" fontsize=10 fontcolor="#1F2329"
+	      bgcolor="#BBC2CF" penwidth=1.5 pencolor="#1F2329"]
+
+	"/"    -- {"/conf" "/doc" "/etc" "/rss" "/srv"}
+	"/doc" -- {"/doc/etc" "/doc/man" "/doc/sys"}
+	"/etc" -- {"/etc/bin" "/etc/doc" "/etc/www"}
+}

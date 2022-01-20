@@ -1,0 +1,16 @@
+#+TITLE: The Root of the Mango Tree
+#+DESCRIPTION: The landing page
+
+#+BEGIN_QUOTE
+
+  If Java had true garbage collection, most programs would delete themselves upon execution.
+
+  \mdash Robert Sewell
+
+#+END_QUOTE
+
+* Greetings
+
+Welcome to the landing page. Feel free to look around, maybe you'll find something of interest. If you're looking for program configurations to plagiarise \lsaquo{}as I did for this site\rsaquo, trying to figure out the least efficient way to compile your code, or just going on a wild adventure through the deep expanse of the web, you should probably start navigating the file tree. Here is a quick diagram for your convenience, figuring out what each node represents is left as an exercise to the reader:
+
+[[dot:/hierarchy.dot][Filesystem Hierarchy]]

@@ -1,0 +1,209 @@
+@font-face {
+	font-family: "Iosevka Aile Web";
+	font-display: swap;
+	font-weight: 400;
+	font-stretch: normal;
+	font-style: normal;
+	src: url("/fonts/iosevka-aile-regular.woff2")
+	     format("woff2");
+}
+
+@font-face {
+	font-family: "Iosevka Aile Web";
+	font-display: swap;
+	font-weight: 600;
+	font-stretch: normal;
+	font-style: bold;
+	src: url("/fonts/iosevka-aile-bold.woff2")
+	     format("woff2");
+}
+
+@font-face {
+	font-family: "Fira Mono";
+	font-display: swap;
+	font-weight: 400;
+	font-stretch: normal;
+	font-style: normal;
+	src: url("/fonts/fira-mono-regular.woff2")
+	     format("woff2");
+}
+
+:root {
+	--background: #242730;
+	--blue: #51AFEF;
+	--green: #7BC275;
+	--grey: #62686E;
+	--light-blue: #5CEFFF;
+	--light-purple: #A991F1;
+	--orange: #E69055;
+	--purple: #C57BDB;
+	--src-block: #1F2329;
+	--white: #BBC2CF;
+	--yellow: #FCCE7B;
+}
+
+body {
+	color: var(--white);
+	background-color: var(--background);
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: "Iosevka Aile Web", sans-serif;
+	font-size: 1.3em;
+}
+
+h1 {
+	color: var(--purple);
+}
+
+h2, a, a:visited {
+	color: var(--blue);
+}
+
+a {
+	font-weight: bold;
+}
+
+pre {
+	background-color: var(--src-block);
+	border-radius: 15px;
+	padding: 1.2em;
+	position: relative;
+	overflow: auto;
+}
+
+pre > code {
+	color: var(--white);
+	font-size: 0.8em;
+}
+
+pre:before {
+	display: none;
+	color: #555;
+	position: absolute;
+	top: -8px;
+	right: 12px;
+	padding: 3px;
+}
+
+pre:hover:before {
+	display: inline;
+	margin-top: 14px;
+}
+
+pre.makefile:before {
+	content: "Makefile";
+}
+
+pre.c:before {
+	content: "C";
+}
+
+pre.sh:before {
+	content: "Shell";
+}
+
+code, kbd {
+	font-family: "Fira Mono";
+	font-size: 0.9em;
+}
+
+code {
+	color: var(--orange);
+}
+
+kbd {
+	color: var(--green);
+}
+
+p {
+	text-align: justify;
+}
+
+ul.org-ul {
+	list-style-type: none;
+}
+
+ul.org-ul > li:before {
+	content: "–";
+	position: absolute;
+	margin-left: -20px;
+}
+
+h1:hover a.anchor {
+	color: var(--purple);
+}
+
+h2:hover a.anchor {
+	color: var(--blue);
+}
+
+div.src-code:hover a.anchor {
+	color: var(--green);
+}
+
+h1 > a.anchor {
+	margin-left: -30px;
+}
+
+div.src-code > a.anchor {
+	margin-left: -30px;
+	font-size: 1.5em;
+}
+
+a.anchor {
+	float: left;
+	text-decoration: none;
+	padding-right: 4px;
+	margin-left: -25px;
+	color: #212529;
+}
+
+blockquote {
+	font-size: 0.9em;
+	font-style: italic;
+	border-left: 6px solid var(--src-block);
+	padding-left: 1em;
+	margin-left: 2em;
+}
+
+.org-preprocessor,
+.org-tree-sitter-hl-faceXfunctionXcall,
+.org-tree-sitter-hl-faceXfunctionXbuiltin {
+	font-weight: bold;
+}
+
+.org-string, .org-tree-sitter-hl-faceXstring {
+	color: var(--green);
+}
+
+.org-tree-sitter-hl-faceXfunction {
+	color: var(--light-blue);
+}
+
+.org-tree-sitter-hl-faceXoperator,
+.org-tree-sitter-hl-faceXpunctuationXbracket,
+.org-tree-sitter-hl-faceXpunctuationXdelimiter {
+	color: var(--white);
+}
+
+.org-makefile-targets,
+.org-tree-sitter-hl-faceXfunctionXcall,
+.org-tree-sitter-hl-faceXkeyword,
+.org-tree-sitter-hl-faceXoperator {
+	color: var(--blue);
+}
+
+.org-preprocessor,
+.org-tree-sitter-hl-faceXtypeXbuiltin,
+.org-tree-sitter-hl-faceXfunctionXbuiltin {
+	color: var(--purple);
+}
+
+.org-tree-sitter-hl-faceXconstant {
+	color: var(--light-purple);
+}
+
+.org-tree-sitter-hl-faceXcomment {
+	color: var(--grey);
+}
