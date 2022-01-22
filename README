@@ -9,4 +9,3 @@ NOTE FOR OTHERS
 
 Build the site with `make'
 tidy(1) is used to remove useless tags and do some other cleanup on the generated HTML
-pup(1) is used to make the generated HTML pretty
