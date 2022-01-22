@@ -52,7 +52,7 @@ body {
 	font-size: 1.3em;
 }
 
-h1 {
+h1, h3 {
 	color: var(--purple);
 }
 
@@ -130,7 +130,7 @@ ul.org-ul > li:before {
 	margin-left: -20px;
 }
 
-h1:hover a.anchor {
+h1:hover a.anchor, h3:hover a.anchor {
 	color: var(--purple);
 }
 
