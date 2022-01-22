@@ -41,6 +41,21 @@
                (replace-regexp-in-string "[^[:alnum:]_-]" "")))
 
 
+(defun site/org-html-table (table contents info)
+  (s-replace-regexp (rx "<table><tr>"
+                         (group (0+ nonl))
+                         "</tr>" eol)
+                     "<table><th>\\1</th></table>"
+                     (format "<table>%s</table>" contents)))
+
+(defun site/org-html-table-row (row contents info)
+  (if contents
+      (format "<tr>%s</tr>" contents)
+    ""))
+
+(defun site/org-html-table-cell (cell contents info)
+  (format "<td>%s</td>" contents))
+
 ;; Format a headline to have a clickable anchor to its left. If the headline is a top level heading
 ;; (i.e. <h1>) then the anchor is a '§', otherwise it is a '¶'.
 (defun site/org-html-headline (headline contents info)
@@ -137,6 +152,9 @@
                                    :translate-alist
                                    '((template . site/org-html-template)
                                      (headline . site/org-html-headline)
+                                     (table . site/org-html-table)
+                                     (table-row . site/org-html-table-row)
+                                     (table-cell . site/org-html-table-cell)
                                      (src-block . site/org-html-src-block)))
 
 (defun org-html-publish-to-html (plist filename pub-dir)
