@@ -1,0 +1,29 @@
+table.head, table.foot {
+	width: 100%;
+	color: var(--purple);
+}
+
+td.head-rtitle, td.foot-ros {
+	text-align: right;
+}
+
+td.head-vol, td.foot-date {
+	text-align: center;
+}
+
+.Nd, .Bf, .Op {
+	display: inline;
+}
+
+.Ad {
+	font-style: italic;
+}
+
+.Bl-diag > dt, .Ms {
+	font-weight: bold;
+}
+
+code.Nm, .Fl, .Cm, .Ic, code.In, .Fd, .Fn, .Cd {
+	font-weight: bold;
+	font-family: inherit;
+}

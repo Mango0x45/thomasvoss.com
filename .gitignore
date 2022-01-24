@@ -1,7 +1,13 @@
+# Programs used in the build process
 emacs-27.2/
+mandoc-cvs/
+
+# Build process output
 pkg/
 pub/
-site/fonts/
 .org-timestamps/
+scripts/build-man/build-man
 
+# Site files
+site/fonts/
 LAYOUT

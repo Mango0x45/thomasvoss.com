@@ -1,0 +1,168 @@
+.\" vi: tw=100
+.Dd 24 January, 2022
+.Dt MPASTE 1
+.Os \*(Px
+.Sh NAME
+.Nm mpaste
+.Nd a simple and minimal paste server
+.Sh SYNOPSIS
+.Nm
+.Op Fl c Ar counter
+.Op Fl f Ar file_dir
+.Op Fl i Ar index
+.Op Fl u Ar users
+.Ar domain
+.Ar port
+.Sh DESCRIPTION
+.Nm
+is a minimal paste server for hosting plaintext data.
+The paste server has support for file uploads, syntax highlighting, a customizable homepage,
+customizable tab width, and a password protected mode where only users with valid API keys can
+upload pastes.
+For the simplest example of a working paste server, simply run
+.Nm
+and provide it with a
+.Ar domain
+and
+.Ar port .
+The provided domain is not super important, it is just used in the message sent back to the client
+after a successful paste so that they have a direct link to click on to go to their paste.
+The port on the otherhand does matter, it is the port on which the server will listen.
+.Pp
+Once the server is running you can POST a file to the server by sending a form with the name
+.Dq file .
+Here is an example of POSTing a file with
+.Xr curl 1 :
+.Pp
+.Dl $ curl -X POST -F \(aqfile=@foo.txt\(aq domain.com
+.Pp
+After a successful POST the server will respond with a URI to the post in the form
+.Dq domain.com/ID
+where
+.Dq ID
+is a number which increments with each paste.
+When viewed, the paste will be displayed as unformatted plaintext.
+If you would like syntax highlighting simply append the appropiate file extension to the URI.
+For example, to syntax highlight C code with paste ID 5, go to
+.Dq domain.com/5.c .
+.Pp
+By default when syntax highlighting the server displays tab characters with a width of 8 columns. If
+you would like to customize the width of a tab you can set the
+.Dq tabs
+query parameter in the URI.
+For example, to view a Python file with a tab width of 4 columns, go to
+.Dq domain.com/1.py?tabs=4 .
+.Pp
+If you would like to protect the server by requiring all users to have an API key, simply set the
+.Ev MPASTE_SECRET
+environment variable.
+With this secret set, you can generate a JWT token encoded with that same secret, and with the
+playload
+.Dq name=USERS NAME .
+For example, one might have the payload
+.Dq name=Johnny Appleseed .
+This name is then looked up in the
+.Pa users
+file.
+If the name is found in that file, the POST is allowed, otherwise it is rejected.
+You can specify the
+.Pa users
+file with the
+.Fl u
+flag.
+An example file might look like this:
+.Pp
+.Bd -literal -offset indent
+Johnny Appleseed
+John Doe
+Hunter
+.Ed
+.Pp
+As a user if you want to authenticate yourself you must send your JWT token in an authorization
+header.
+As an example using
+.Xr curl 1 :
+.Pp
+.Dl $ curl -X POST -H \(aqAuthorization: YOUR.JWT.TOKEN\(aq -F \(aqfile=@foo.txt\(aq domain.com
+.Pp
+Finally, you may want to display content on the paste servers homepage.
+This is easy and can be done by creating a
+.Pa index.html
+in the current working directory.
+If you would like to specify a different file, you can use the
+.Fl i Ar index
+flag.
+.Sh OPTIONS
+.Bl -tag -width Ds
+.It Fl c Ar counter
+Specify the path to a file to use as a counter.
+This file will hold the number of the ID that will be assigned to the next paste.
+If the given file does not exist, it will be created on the next successful paste.
+If this flag is not specified then it will default to
+.Pa counter .
+.It Fl f Ar file_dir
+Specify a directory in which to store the pastes that users POST to the server.
+If the given folder does not exist, then it will be created.
+If this flag is not specified then it will default to
+.Pa files/ .
+.It Fl i Ar index
+Specify a file to serve on the servers root
+.Pq Pa /
+page.
+If this flag is not specified then it will default to
+.Pa index.html .
+.It Fl u Ar users
+Specify a file to store authorized users in.
+This file must be created by the user and must contain a newline seperated list of authorized users
+as shown in the
+.Sx DESCRIPTION
+section of this manual.
+If this flag is specified and the
+.Ev MPASTE_SECRET
+environment variable is not set, it will have no effect.
+If the environment is set and this file does not exist, then no users will be allowed to POST.
+.El
+.Sh FILES
+.Bl -tag -width Ds
+.It Pa counter
+This is where the ID of the next paste is stored.
+.It Pa index.html
+This is the default file that the
+.Nm
+server will attempt to serve on the root
+.Pq Pa /
+page.
+.It Pa users
+This is a newline seperated list of authenticated users.
+.El
+.Sh ENVIRONMENT
+.Bl -tag -width Ds
+.It Ev MPASTE_SECRET
+This is the secret key used to encode and decode the JWT tokens used when authenticating users.
+Under no circumstances should you share this token with anybody.
+If not set, anyone will be able to POST their pastes to the server.
+.El
+.Sh EXIT STATUS
+.Ex -std
+.Sh SEE ALSO
+.Xr curl 1 ,
+.Xr nginx 1
+.Sh AUTHORS
+.An Thomas Voss Aq Mt thomasvoss@live.com
+.Sh SECURITY CONSIDERATIONS
+If deployed on a public network
+.Pq or even on a private one
+you should take the following
+.Pq non-exhaustive
+list of scenarios into consideration:
+.Bl -dash
+.It
+Users uploading exessively large files. You can consider using tools such as
+.Xr nginx 1
+to control the maximum allowed file upload size.
+.It
+Users uploading exessively many files.
+.It
+Users uploading non-plaintext files. On certain browsers this may prompt a user to download the
+hosted content, which is a potential attack vector.
+.El
