@@ -1,9 +1,12 @@
 clean: yes
+indent-with-tabs: yes
+indent: yes
 logical-emphasis: yes
 numeric-entities: yes
 output-html: yes
 quiet: yes
 show-warnings: no
 tidy-mark: no
+vertical-space: yes
 warn-proprietary-attributes: no
 wrap: 100
