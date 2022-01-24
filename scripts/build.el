@@ -114,6 +114,18 @@
               (h1 ,doc-title)
               ,contents))))))
 
+(defun site/org-publish-man (plist filename pub-dir)
+  (unless (file-directory-p pub-dir)
+    (make-directory pub-dir t))
+  (let ((output (expand-file-name (file-name-nondirectory filename) pub-dir)))
+    (shell-command (concat "mandoc -Thtml <"
+                           filename
+                           " | "
+                           site/scr-dir
+                           "/build-man/build-man >"
+                           output
+                           ".html"))))
+
 ;; (defun site/org-html-format-headline (level attributes anchor-name text contents)
 ;; Initialize package sources
 (require 'package)
@@ -212,7 +224,13 @@
                             :base-extension "css\\|woff2\\|svg\\|dot"
                             :base-directory site/src-dir
                             :publishing-directory site/pub-dir
-                            :publishing-function 'org-publish-attachment)))
+                            :publishing-function 'org-publish-attachment)
+                      (list "manual-pages"
+                            :recursive t
+                            :base-extension "[0-8]"
+                            :base-directory site/src-dir
+                            :publishing-directory site/pub-dir
+                            :publishing-function 'site/org-publish-man)))
 
 ;; Publish the site
 (defun site/build ()

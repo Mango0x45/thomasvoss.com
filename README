@@ -9,3 +9,4 @@ NOTE FOR OTHERS
 
 Build the site with `make'
 tidy(1) is used to remove useless tags and do some other cleanup on the generated HTML
+mandoc(1) is used to format HTML manual pages from mdoc sources in a sane manner

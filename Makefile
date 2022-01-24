@@ -1,6 +1,6 @@
 all:
 	cd scripts/build-man/ && go build
-	emacs -Q --batch -l ./scripts/build.el -f site/build 2>/dev/null
+	PATH=$$PATH:./mandoc-cvs emacs -Q --batch -l ./scripts/build.el -f site/build 2>/dev/null
 	find pub/ -name '*.html' -exec tidy -config .tidyrc -m {} + || true
 
 clean:
