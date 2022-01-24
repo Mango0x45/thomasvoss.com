@@ -9,7 +9,7 @@ graph {
 	node [shape=rect style="filled,rounded" fontname="Fira Mono" fontsize=10 fontcolor="#1F2329"
 	      bgcolor="#BBC2CF" penwidth=1.5 pencolor="#1F2329"]
 
-	"/"    -- {"/conf" "/doc" "/etc" "/rss" "/srv"}
-	"/doc" -- {"/doc/etc" "/doc/man" "/doc/sys"}
+	"/"    -- {"/conf" "/etc" "/rss" "/srv" "/usr"}
+	"/usr" -- {"/usr/doc" "/usr/man" "/usr/sys"}
 	"/etc" -- {"/etc/bin" "/etc/doc" "/etc/www"}
 }
