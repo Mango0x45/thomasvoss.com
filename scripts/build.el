@@ -221,7 +221,7 @@
                             :with-toc nil)
                       (list "static-sources"
                             :recursive t
-                            :base-extension "css\\|woff2\\|svg\\|dot"
+                            :base-extension "css\\|woff2\\|svg\\|dot\\|pdf"
                             :base-directory site/src-dir
                             :publishing-directory site/pub-dir
                             :publishing-function 'org-publish-attachment)
