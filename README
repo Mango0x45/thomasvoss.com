@@ -1,0 +1,9 @@
+┌────────────────┐
+│ thomasvoss.com │
+└────────────────┘
+
+Since this site uses lowdown(1) for markdown to html conversions, and diffing
+markdown with diff(1) is kinda shit, you can configure git with the following
+commands to use lowdown-diff(1) for diffing markdown:
+
+    $ printf '[diff "md-diff"]\n\tcommand = ./ld-diff' >> .git/config
