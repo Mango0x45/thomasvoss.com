@@ -1,0 +1,3 @@
+#!/bin/sh
+
+lowdown-diff -tterm "$2" "$1"
