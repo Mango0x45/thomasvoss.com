@@ -82,6 +82,10 @@ MARKDOWN STYLE GUIDE:
      - Hello
      - World
 
+  Line-length should not exceed 80 columns.  If you are using vim you can
+  execute “:set tw=80” to have your lines automatically wrapped as you type.
+  This should be quite self-explanitory, you do not need an example.
+
 
 SCSS/MAKEFILE STYLE GUIDE:
   Use 8 column tabs.
