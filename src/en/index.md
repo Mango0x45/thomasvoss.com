@@ -8,7 +8,7 @@
 Welcome to my plot of the internet.  This site is mostly oriented towards topics
 related to software development, but you might find some things that are
 completely unrelated aswell.  The “source code” for the site (if you can call
-Markdown and a basic build system source code) [are available through git][1].
+markdown and a basic build system source code) [are available through git][1].
 
 Now go branch off to a subsection of the site:
 
