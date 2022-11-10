@@ -35,6 +35,14 @@ BUILDING:
   W*ndows or something... lol.
 
 
+COMMIT MESSAGES:
+  Keep your commit messages short (< 51 characters) and if you have more to say
+  (say as much as you feel is necessary) include it in the commit description.
+
+  Use full sentences in your commit description.  Start your commit messages
+  with a capital letter and do not end them with a period.
+
+
 MARKDOWN STYLE GUIDE:
   For improved readability, sentences should be double spaces:
 
