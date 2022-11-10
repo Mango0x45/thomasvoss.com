@@ -5,6 +5,8 @@
 >
 > — _Robert Sewell_
 
+<br />
+
 Welcome to my plot of the internet.  This site is mostly oriented towards topics
 related to software development, but you might find some things that are
 completely unrelated aswell.  The “source code” for the site (if you can call
