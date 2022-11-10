@@ -1,6 +1,11 @@
+.PHONY: clean
+
 outdir   = out
-sources := $(shell find . -type f -name '*.md' -printf '%P\n')
-outputs := $(addprefix $(outdir)/,$(sources:.md=.html))
+srcdir   = src
+sources := $(shell find src -type f)
+outputs := $(sources:.md=.html)
+outputs := $(outputs:.scss=.css)
+outputs := $(outputs:$(srcdir)/%=$(outdir)/%)
 
 all: $(outputs)
 
@@ -9,6 +14,15 @@ $(outputs): | $(outdir)
 $(outdir):
 	mkdir $@
 
-$(outdir)/%.html: %.md
-	mkdir -p `dirname "$(outdir)/$<"`
-	lowdown $< | cat head.html - tail.html > $@
+$(outdir)/%.css: $(srcdir)/%.scss
+	mkdir -p `dirname "$@"`
+	sassc $< >$@
+
+$(outdir)/%.html: $(srcdir)/%.md
+	mkdir -p `dirname "$@"`
+	# TODO: Support other languages?
+	lowdown --html-no-skiphtml --html-no-escapehtml $< \
+		| cat src/en/head.html - src/en/tail.html > $@
+
+clean:
+	rm -rf $(outdir)

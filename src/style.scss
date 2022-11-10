@@ -1,0 +1,25 @@
+body {
+	font-family: "Linux Libertine";
+}
+
+main {
+	display: block;
+	font-size: 1.5em;
+	line-height: 1.5;
+	margin: 0 auto 0 auto;
+	max-width: 50%;
+	overflow-wrap: break-word;
+}
+
+h1 {
+	font-size: 3em;
+	font-variant: small-caps;
+	text-align: center;
+	text-decoration: underline;
+}
+
+blockquote {
+	border-left: 0.2em solid #000;
+	padding-left: 1em;
+	position: relative;
+}

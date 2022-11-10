@@ -1,8 +1,9 @@
 # Root Page
 
-> If Java had true garbage collection, most programs would delete themselves
-> upon execution.
-> — Robert Sewell
+> “If Java had true garbage collection, most programs would delete themselves
+> upon execution.”
+>
+> — _Robert Sewell_
 
 Welcome to my plot of the internet.  This site is mostly oriented towards topics
 related to software development, but you might find some things that are
