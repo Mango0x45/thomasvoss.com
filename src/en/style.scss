@@ -1,0 +1,8 @@
+blockquote {
+	p:first-child::before {
+		content: '“';
+	}
+	p:first-child::after {
+		content: '”';
+	}
+}
