@@ -42,13 +42,17 @@ MARKDOWN STYLE GUIDE:
     Hello world! How are you doing today?   # Bad
 
   Proper unicode characters should be used where appropriate.  This includes
-  characters such as quotation marks (“”), the Dutch “IJ” if writing in Dutch
-  (Ĳ, ĳ), and the ellipsis (…).  Some of these characters may look odd in a
-  monospace font, but when compiled to HTML it ensures the proper characters are
-  used:
+  characters such as quotation marks (“”) and the Dutch “IJ” if writing in Dutch
+  (Ĳ, ĳ).  Some of these characters may look odd in a monospace font, but when
+  compiled to HTML it ensures the proper characters are used.  An exception
+  exists for the ellipsis (…) which looks totally stupid in monospace, as
+  lowdown automatically “...” into an ellipsis for us:
 
-    So he said: “I have a bad feeling about this…”    # Good
-    So he said: "I have a bad feeling about this..."  # Bad
+    Mĳn vader blĳft in Ĳsselmeer     # Good
+    Mijn vader blijft in IJsselmeer  # Bad
+
+    So he said: “I have a bad feeling about this...”  # Good
+    So he said: "I have a bad feeling about this…"    # Bad
 
   If german pages are ever added to the site, the capital eszett (‘ẞ’) should be
   used when appropriate as opposed to “SS”:
