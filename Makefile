@@ -1,3 +1,4 @@
+.SILENT:
 .PHONY: clean
 
 outdir   = out
@@ -17,12 +18,14 @@ $(outdir):
 $(outdir)/%.css: $(srcdir)/%.scss
 	mkdir -p `dirname "$@"`
 	sassc $< >$@
+	printf 'SASSC\t%s\n' $<
 
 $(outdir)/%.html: $(srcdir)/%.md
 	mkdir -p `dirname "$@"`
 	langdir=`echo $< | grep -o '^$(srcdir)/..'`;        \
 	lowdown --html-no-skiphtml --html-no-escapehtml $<  \
 		| cat $$langdir/head.html - $$langdir/tail.html > $@
+	printf 'LOWDOWN\t%s\n' $<
 
 clean:
 	rm -rf $(outdir)
