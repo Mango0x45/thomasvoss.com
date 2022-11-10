@@ -1,14 +1,17 @@
-┌────────────────┐
-│ thomasvoss.com │
-└────────────────┘
+                               ┌────────────────┐
+                               │ thomasvoss.com │
+                               └────────────────┘
 
-Since this site uses lowdown(1) for markdown to html conversions, and diffing
-markdown with diff(1) is kinda shit, you can configure git with the following
-commands to use lowdown-diff(1) for diffing markdown:
+DIFFING:
+  Since this site uses lowdown(1) for markdown to html conversions, and diffing
+  markdown with diff(1) is kinda shit, you can configure git with the following
+  commands to use lowdown-diff(1) for diffing markdown:
 
     $ printf '[diff "md-diff"]\n\tcommand = ./ld-diff' >> .git/config
 
-The file structure is as follows:
+
+STRUCTURE:
+  The file structure is as follows:
 
     .
     └── src
@@ -20,11 +23,53 @@ The file structure is as follows:
         │   └── tail.html     # The tail of every generated page
         └── style.scss        # Global stylesheet
 
-You can build the site by simply running “make”; the compiled output will be in
-the “out/” directory.  You can also run “make clean” to remove it.  In order to
-build the site you should have lowdown(1) installed to convert MD to HTML, and
-sassc(1) to convert SCSS to CSS.  These are both in the Artix repos as “lowdown”
-and “sassc” but I would imagine they are in the Arch repos too, and probably
-other distributions of Linux.  If you’re on the BSDs you’re smart enough to
-build them from source if they aren’t packaged, and if you’re on W*ndows or
-something... lol.
+
+BUILDING:
+  You can build the site by simply running “make”; the compiled output will be
+  in the “out/” directory.  You can also run “make clean” to remove it.  In
+  order to build the site you should have lowdown(1) installed to convert MD to
+  HTML, and sassc(1) to convert SCSS to CSS.  These are both in the Artix repos
+  as “lowdown” and “sassc” but I would imagine they are in the Arch repos too,
+  and probably other distributions of Linux.  If you’re on the BSDs you’re smart
+  enough to build them from source if they aren’t packaged, and if you’re on
+  W*ndows or something... lol.
+
+
+MARKDOWN STYLE GUIDE:
+  For improved readability, sentences should be double spaces:
+
+    Hello world!  How are you doing today?  # Good
+    Hello world! How are you doing today?   # Bad
+
+  Proper unicode characters should be used where appropriate.  This includes
+  characters such as quotation marks (“”), the Dutch “IJ” if writing in Dutch
+  (Ĳ, ĳ), and the ellipsis (…).  Some of these characters may look odd in a
+  monospace font, but when compiled to HTML it ensures the proper characters are
+  used:
+
+    So he said: “I have a bad feeling about this…”    # Good
+    So he said: "I have a bad feeling about this..."  # Bad
+
+  If german pages are ever added to the site, the capital eszett (‘ẞ’) should be
+  used when appropriate as opposed to “SS”:
+
+    DIE STRAẞEN   # Good
+    DIE STRASSEN  # Bad
+
+  Indents should be two spaces:
+
+    # Good
+    Here is a list:
+
+      - Hello
+      - World
+
+    # Bad
+    Here is a list:
+
+     - Hello
+     - World
+
+
+SCSS/MAKEFILE STYLE GUIDE:
+  Use 8 column tabs.
