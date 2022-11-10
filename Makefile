@@ -20,9 +20,9 @@ $(outdir)/%.css: $(srcdir)/%.scss
 
 $(outdir)/%.html: $(srcdir)/%.md
 	mkdir -p `dirname "$@"`
-	# TODO: Support other languages?
-	lowdown --html-no-skiphtml --html-no-escapehtml $< \
-		| cat src/en/head.html - src/en/tail.html > $@
+	langdir=`echo $< | grep -o '^$(srcdir)/..'`;        \
+	lowdown --html-no-skiphtml --html-no-escapehtml $<  \
+		| cat $$langdir/head.html - $$langdir/tail.html > $@
 
 clean:
 	rm -rf $(outdir)
