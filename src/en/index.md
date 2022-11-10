@@ -12,11 +12,11 @@ markdown and a basic build system source code) [are available through git][1].
 
 Now go branch off to a subsection of the site:
 
- - [My Projects][2]
- - [Interesting Papers][3]
- - [Miscellaneous Posts][4]
- - [Manual Pages][5]
- - [Other Websites][6]
+  - [My Projects][2]
+  - [Interesting Papers][3]
+  - [Miscellaneous Posts][4]
+  - [Manual Pages][5]
+  - [Other Websites][6]
 
 [1]: https://git.thomasvoss.com/thomasvoss.com
 [2]: /en/code
