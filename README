@@ -5,7 +5,7 @@
 DIFFING:
   Since this site uses lowdown(1) for markdown to html conversions, and diffing
   markdown with diff(1) is kinda shit, you can configure git with the following
-  commands to use lowdown-diff(1) for diffing markdown:
+  command to use lowdown-diff(1) for diffing markdown:
 
     $ printf '[diff "md-diff"]\n\tcommand = ./ld-diff' >> .git/config
 
@@ -44,7 +44,7 @@ COMMIT MESSAGES:
 
 
 MARKDOWN STYLE GUIDE:
-  For improved readability, sentences should be double spaces:
+  For improved readability, sentences should be double spaced:
 
     Hello world!  How are you doing today?  # Good
     Hello world! How are you doing today?   # Bad
@@ -54,7 +54,7 @@ MARKDOWN STYLE GUIDE:
   (Ĳ, ĳ).  Some of these characters may look odd in a monospace font, but when
   compiled to HTML it ensures the proper characters are used.  An exception
   exists for the ellipsis (…) which looks totally stupid in monospace, as
-  lowdown automatically “...” into an ellipsis for us:
+  lowdown automatically turns “...” into an ellipsis for us:
 
     Mĳn vader blĳft in Ĳsselmeer     # Good
     Mijn vader blijft in IJsselmeer  # Bad
