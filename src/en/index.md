@@ -1,3 +1,5 @@
+Last-Edited: 11 November 2022, 05:38 UTC
+
 # Root Page
 
 > If Java had true garbage collection, most programs would delete themselves
