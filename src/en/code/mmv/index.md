@@ -1,4 +1,4 @@
-Last-Edited: 11 November 2022, 06:46 UTC
+Last-Edited: 11 November 2022, 06:48 UTC
 
 # Moving Files the Right Way
 
@@ -74,7 +74,7 @@ a couple of issues with this.
 
   4. Moving symbolic links is its own whole can of worms.  If a symlink points
      to a relative location then you need to make sure you keep pointing to the
-     right place.  If the symlink is aboslute however then you can leave it
+     right place.  If the symlink is absolute however then you can leave it
      untouched.  But what if the symlink points to a file that you’re moving as
      part of your batch move operation?  Now you need to handle that too.
 
