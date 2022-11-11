@@ -24,7 +24,7 @@ $(outdir)/%.html: $(srcdir)/%.md
 	mkdir -p `dirname "$@"`
 	langdir=`echo $< | grep -o '^$(srcdir)/..'`;        \
 	lowdown --html-no-skiphtml --html-no-escapehtml $<  \
-		| ./tabulate.sed                            \
+		| ./postproc.sed                            \
 		| cat $$langdir/head.html - $$langdir/tail.html > $@
 	printf 'LOWDOWN\t%s\n' $<
 
