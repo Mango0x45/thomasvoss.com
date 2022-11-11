@@ -1,5 +1,11 @@
 #!/bin/sh
 
+# To have this git hook automatically get updated when changes are made, you
+# should symlink this to the hooks directory instead of copying it:
+#
+#     $ ln -sr pre-commit .git/hooks/
+#
+
 set -e
 
 git status --porcelain                                   \
