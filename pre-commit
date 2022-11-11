@@ -24,4 +24,5 @@ git status --porcelain                                   \
 	c Last-Edited: '"$DATE"'
 }
 		' $file
+		git add $file
 	done
