@@ -22,10 +22,14 @@ $(outdir)/%.css: $(srcdir)/%.scss
 
 $(outdir)/%.html: $(srcdir)/%.md
 	mkdir -p `dirname "$@"`
-	langdir=`echo $< | grep -o '^$(srcdir)/..'`;        \
-	lowdown --html-no-skiphtml --html-no-escapehtml $<  \
-		| ./postproc.sed                            \
-		| cat $$langdir/head.html - $$langdir/tail.html > $@
+	langdir=`echo $< | grep -o '^$(srcdir)/..'`;             \
+	lastedit=`lowdown -X Last-Edited $<`;                    \
+	lowdown --html-no-skiphtml --html-no-escapehtml $<       \
+		| ./postproc.sed                                 \
+		| cat $$langdir/head.html - $$langdir/tail.html  \
+		| tac                                            \
+		| sed 's/<!-- *LASTEDITED *-->/'"$$lastedit"'/'  \
+		| tac >$@
 	printf 'LOWDOWN\t%s\n' $<
 
 clean:

@@ -1,0 +1,21 @@
+#!/bin/sh
+
+set -e
+
+git status --porcelain                                   \
+	| awk '/^[^ ?]/ && $2 ~ /.*\.md$/ { print $2 }'  \
+	| while read -r file; do
+		langdir=`echo $file | grep -o '^src/..'`
+		read locale < $langdir/LOCALE
+		DATE=`LC_ALL=$locale date -u +'%-d %B %Y, %H:%M %Z'`
+		sed -i '
+1 {
+	/^Last-Edited:/! {
+		i Last-Edited: '"$DATE"'\
+
+		b
+	}
+	c Last-Edited: '"$DATE"'
+}
+		' $file
+	done
