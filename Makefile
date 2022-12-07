@@ -32,5 +32,10 @@ $(outdir)/%.html: $(srcdir)/%.md
 		| tac >$@
 	printf 'LOWDOWN\t%s\n' $<
 
+$(outdir)/%.svg: $(srcdir)/%.svg
+	mkdir -p `dirname "$@"`
+	cp $< $@
+	printf 'CP\t%s\n' $<
+
 clean:
 	rm -rf $(outdir)
