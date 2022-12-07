@@ -1,4 +1,4 @@
-Last-Edited: 11 November 2022, 05:38 UTC
+Last-Edited: 7 December 2022, 20:33 UTC
 
 # Root Page
 
@@ -17,10 +17,13 @@ markdown and a basic build system source code) [are available through git][1].
 Now go branch off to a subsection of the site:
 
   - [My Projects][2]
+  - [Other Websites][6]
+
+<!--
   - [Interesting Papers][3]
   - [Miscellaneous Posts][4]
   - [Manual Pages][5]
-  - [Other Websites][6]
+-->
 
 [1]: https://git.thomasvoss.com/thomasvoss.com
 [2]: /en/code
