@@ -1,4 +1,4 @@
-Last-Edited: 7 December 2022, 20:33 UTC
+Last-Edited: 7 December 2022, 21:40 UTC
 
 # Root Page
 
@@ -11,7 +11,7 @@ Last-Edited: 7 December 2022, 20:33 UTC
 
 Welcome to my plot of the internet.  This site is mostly oriented towards topics
 related to software development, but you might find some things that are
-completely unrelated aswell.  The “source code” for the site (if you can call
+completely unrelated as well.  The “source code” for the site (if you can call
 markdown and a basic build system source code) [are available through git][1].
 
 Now go branch off to a subsection of the site:
