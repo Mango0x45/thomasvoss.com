@@ -15,14 +15,10 @@ git status --porcelain                                   \
 		read locale < $langdir/LOCALE
 		DATE=`LC_ALL=$locale date -u +'%-d %B %Y, %H:%M %Z'`
 		sed -i '
-1 {
-	/^Last-Edited:/! {
-		i Last-Edited: '"$DATE"'\
+		1 {
+			/^Last-Edited:/ c Last-Edited: '"$DATE"'
+			/^Last-Edited:/!i Last-Edited: '"$DATE"'\
 
-		b
-	}
-	c Last-Edited: '"$DATE"'
-}
-		' $file
+		}' $file
 		git add $file
 	done
