@@ -1,4 +1,4 @@
-Last-Edited: 7 December 2022, 20:15 UTC
+Last-Edited: 7 December 2022, 20:16 UTC
 
 # Moving Files the Right Way
 
@@ -148,7 +148,7 @@ So how does `mmv` deal with special characters, and newlines in particular?
 Well it does so by providing the user with the `-0`, `-1`, and `-e` flags:
 
 *`-0`*
-: Tell `mmv` to expect it’s input to not be seperated by newlines (‘`\n`’), but
+: Tell `mmv` to expect its input to not be seperated by newlines (‘`\n`’), but
   by NUL bytes (‘`\0`’).  NUL bytes are the only characters not allowed in
   filenames besides forward slashes, so they are an obvious choice for an
   alternative seperator.
