@@ -1,4 +1,4 @@
-Last-Edited: 7 December 2022, 20:12 UTC
+Last-Edited: 7 December 2022, 20:15 UTC
 
 # Moving Files the Right Way
 
@@ -138,7 +138,7 @@ section of this page down below.
 
 People are retarded, and as a result we have filenames with newlines in them.
 All it would have taken to solve this issue for everyone was for literally
-**anybody** during the early UNIX days to do “hey, this is a bad idea!”, but
+**anybody** during the early UNIX days to go “hey, this is a bad idea!”, but
 alas, we must deal with this.  Newlines are of course not the only special
 characters filenames can contain, but they are the single most infuriating to
 deal with; the UNIX utilities all being line-oriented really doesn’t work well
