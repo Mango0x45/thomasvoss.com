@@ -1,4 +1,4 @@
-Last-Edited: 11 November 2022, 06:52 UTC
+Last-Edited: 11 December 2022, 23:55 UTC
 
 # My Projects
 
@@ -9,12 +9,12 @@ Last-Edited: 11 November 2022, 06:52 UTC
 
 <br />
 
-On this section of the website I cover some of my projects.  Some are completed,
+In this section of the website I cover some of my projects.  Some are completed,
 some are ongoing; really I’ll just add a post here if I ever have something I
 feel is interesting enough to share.
 
 Posts:
 
-  - [mmv — move multiple/mapped files][1]
+  - [mmv — Move Multiple/Mapped Files][1]
 
-[1]: /en/code/mmv
+[1]: mmv
