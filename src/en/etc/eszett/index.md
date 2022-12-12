@@ -1,4 +1,4 @@
-Last-Edited: 12 December 2022, 04:25 UTC
+Last-Edited: 12 December 2022, 05:57 UTC
 
 # Germans Capital Eszett
 
@@ -53,7 +53,7 @@ Thankfully, after far too long the German language finally got a capital eszett
 (‘ẞ’) in 2017.  While the current rules say that both ‘ẞ’ and “SS” are allowed
 as an uppercase form for ‘ß’, the new ‘ẞ’ character is strongly recommended
 (although adoption is of course, very slow).  This means that while we can still
-uppercase “Straße” to “STRASSE”, we can now also uppercase it to “STAẞE”!
+uppercase “Straße” to “STRASSE”, we can now also uppercase it to “STRAẞE”!
 
 ## My Surname
 
