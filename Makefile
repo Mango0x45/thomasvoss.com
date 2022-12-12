@@ -1,5 +1,5 @@
 .SILENT:
-.PHONY: clean
+.PHONY: check clean
 
 outdir   = out
 srcdir   = src
@@ -36,6 +36,10 @@ $(outdir)/%.svg: $(srcdir)/%.svg
 	mkdir -p `dirname "$@"`
 	cp $< $@
 	printf 'CP\t%s\n' $<
+
+check:
+	find src -name '*.md' -exec \
+		aspell --home-dir=./ --ignore-case check {} \;
 
 clean:
 	rm -rf $(outdir)
