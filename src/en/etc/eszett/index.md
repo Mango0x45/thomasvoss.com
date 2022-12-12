@@ -1,8 +1,8 @@
-Last-Edited: 12 December 2022, 04:23 UTC
+Last-Edited: 12 December 2022, 04:25 UTC
 
 # Germans Capital Eszett
 
-> “Meow” means “Woof” in cat.
+> ‘Meow’ means ‘Woof’ in cat.
 >
 > — _George Carlin_
 
