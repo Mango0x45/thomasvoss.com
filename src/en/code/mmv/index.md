@@ -1,4 +1,4 @@
-Last-Edited: 7 December 2022, 20:16 UTC
+Last-Edited: 12 December 2022, 00:47 UTC
 
 # Moving Files the Right Way
 
@@ -25,7 +25,7 @@ wrong?  Well I’m glad you asked!
 ## Advanced Moving and Pitfalls
 
 Let’s start off nice and simple.  You just inherited a C project that uses the
-sacrilegious camelCase naming convension for its files:
+sacrilegious camelCase naming convention for its files:
 
 ```
 $ ls
@@ -97,7 +97,7 @@ $ ls *.[ch] | mmv sed 's/[A-Z]/\L_&/g'
 
 Let me break down how this works.
 
-`mmv` starts by reading a series of filenames seperated by newlines from the
+`mmv` starts by reading a series of filenames separated by newlines from the
 standard input.  Yes, sometimes filenames have newlines in them and yes there is
 a way to handle them but I shall get to that later.  The filenames that `mmv`
 reads from the standard input will be referred to as the “input files”.  Once
@@ -117,8 +117,8 @@ $ ls LICENSE README | mmv tr A-Z a-z
 ```
 
 In the above example `mmv` reads 2 lines from standard input, those being
-“LICENSE” and “README”.  Those are our 2 input files now.  The `tr` utilty is
-then spawned and the input files are piped into it.  We can simluate this in the
+“LICENSE” and “README”.  Those are our 2 input files now.  The `tr` utility is
+then spawned and the input files are piped into it.  We can simulate this in the
 shell:
 
 ```
@@ -148,14 +148,14 @@ So how does `mmv` deal with special characters, and newlines in particular?
 Well it does so by providing the user with the `-0`, `-1`, and `-e` flags:
 
 *`-0`*
-: Tell `mmv` to expect its input to not be seperated by newlines (‘`\n`’), but
+: Tell `mmv` to expect its input to not be separated by newlines (‘`\n`’), but
   by NUL bytes (‘`\0`’).  NUL bytes are the only characters not allowed in
   filenames besides forward slashes, so they are an obvious choice for an
-  alternative seperator.
+  alternative separator.
 
 *`-1`*
 : Run the utility provided to `mmv` individually for each input file.  If we
-  provide newline seperated input to a given utility, then we won’t be able to
+  provide newline separated input to a given utility, then we won’t be able to
   tell where in its output an output filename begins or ends.  By running the
   utility individually for each filename we can avoid this problem.
 
@@ -185,8 +185,8 @@ The reason this doesn’t work is because due to the line-oriented nature of
 and “file2” to the new filenames “MY”, “FILE1”, “MY”, “FILE2”.  Not only do none
 of those input files actually exist, but we are trying to rename “my” twice!
 The first thing we need to do in order to proceed is to pass the `-0` flag to
-`mmv`, because we want to use the NUL byte as our input seperator and not the
-newline.  We also need `ls` to actually provide us with the filenames delimeted
+`mmv`, because we want to use the NUL byte as our input separator and not the
+newline.  We also need `ls` to actually provide us with the filenames delimited
 by NUL bytes though.  Luckily `GNU ls` gives us the `--zero` flag to do just
 that:
 
@@ -194,10 +194,10 @@ that:
 $ ls --zero my$'\n'file1 my$'\n'file2 | mmv -0 tr a-z A-Z
 ```
 
-This is not done yet though!  `mmv` now realizes that we have 2 input files, one
+This is not done yet though!  `mmv` now realises that we have 2 input files, one
 called “my‹newline›file1” and one called “my‹newline›file2”, but it is still
 providing these 2 filenames to a single `tr` process.  The result of this is
-`tr` providing us with 4 lines of output as it recieved 4 lines of input.  This
+`tr` providing us with 4 lines of output as it received 4 lines of input.  This
 in turn gets interpreted by `mmv` as 4 output files which triggers an error as
 we can’t rename 2 files into 4.
 
@@ -232,7 +232,7 @@ are built into the tool:
    problem).
 
 3. If as a result of the renaming, a file would be overwritten which is not
-   itself another input file, exeuction is aborted before making any changes.
+   itself another input file, execution is aborted before making any changes.
    This can be overridden with the `-f` flag.
 
 4. All input files must be unique, and all output files must be unique.
