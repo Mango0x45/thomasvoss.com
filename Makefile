@@ -1,12 +1,14 @@
 .SILENT:
-.PHONY: check clean
+.PHONY: check clean upload-fonts
 
+fontdir  = fonts
 outdir   = out
 srcdir   = src
 sources := $(shell find src -type f)
 outputs := $(sources:.md=.html)
 outputs := $(outputs:.scss=.css)
 outputs := $(outputs:$(srcdir)/%=$(outdir)/%)
+outputs += $(outdir)/$(fontdir)
 
 all: $(outputs)
 
@@ -14,6 +16,11 @@ $(outputs): | $(outdir)
 
 $(outdir):
 	mkdir $@
+	printf 'MKDIR\t%s\n' $@
+
+$(outdir)/$(fontdir): $(fontdir)
+	cp -r $(fontdir) $(outdir)
+	printf 'CP\t%s\n' $<
 
 $(outdir)/%.css: $(srcdir)/%.scss
 	mkdir -p `dirname "$@"`
@@ -43,3 +50,7 @@ check:
 
 clean:
 	rm -rf $(outdir)
+
+upload-fonts:
+	rsync /usr/share/fonts/ttf-linux-libertine/LinLibertine_Rah.ttf \
+		pi:/var/www/thomasvoss.com/fonts/
