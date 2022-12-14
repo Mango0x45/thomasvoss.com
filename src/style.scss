@@ -15,8 +15,22 @@
 @font-face {
 	font-family: "Linux Libertine";
 	src: url("/fonts/LinLibertine_RBah.ttf") format("truetype");
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Linux Libertine";
+	src: url("/fonts/LinLibertine_RBIah.ttf") format("truetype");
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Linux Libertine";
+	src: url("/fonts/LinLibertine_Mah.ttf") format("truetype");
 	font-weight: normal;
-	font-style: bold;
+	font-style: monospace;
 }
 
 body {

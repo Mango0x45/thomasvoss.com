@@ -52,5 +52,4 @@ clean:
 	rm -rf $(outdir)
 
 upload-fonts:
-	rsync /usr/share/fonts/ttf-linux-libertine/LinLibertine_Rah.ttf \
-		pi:/var/www/thomasvoss.com/fonts/
+	rsync fonts/* pi:/var/www/thomasvoss.com/fonts/
