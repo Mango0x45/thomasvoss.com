@@ -1,4 +1,4 @@
-Last-Edited: 7 December 2022, 20:53 UTC
+Last-Edited: 10 February 2023, 16:14 UTC
 
 # Other Websites
 
@@ -16,7 +16,7 @@ them aren’t.  Feel free to explore.
 My Websites:
 
   - [archive — Mario Kart Wii time trials archive][1]
-  - [cv — my résumé/curriculum vitae][2]
+  - [cv — my résumé/curriculum vitæ][2]
   - [git — my git server][3]
   - [paste — my paste server][4]
   - [retime — a webtool for retiming speedruns][5]
