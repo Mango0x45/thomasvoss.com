@@ -6,7 +6,7 @@
 }
 
 @font-face {
-	src: url("/fonts/CormorantGaramond-Regular.otf")
+	src: url("/fonts/CormorantGaramond-Medium.otf")
 	     format("opentype");
 	font-family: "Cormorant Garamond";
 	font-weight: 500;
@@ -22,10 +22,10 @@
 }
 
 @font-face {
-	src: url("/fonts/CormorantGaramond-Italic.otf")
+	src: url("/fonts/CormorantGaramond-MediumItalic.otf")
 	     format("opentype");
 	font-family: "Cormorant Garamond";
-	font-weight: normal;
+	font-weight: 500;
 	font-style: italic;
 }
 
