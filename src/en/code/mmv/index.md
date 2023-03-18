@@ -1,4 +1,4 @@
-Last-Edited: 12 December 2022, 00:47 UTC
+Last-Edited: 18 March 2023, 04:09 UTC
 
 # Moving Files the Right Way
 
@@ -81,7 +81,7 @@ a couple of issues with this.
      part of your batch move operation?  Now you need to handle that too.
 
 
-## Name Mapping with `mmv`
+## Name Mapping with mmv
 
 What is `mmv`?  It’s the solution to all your problems, that’s what it is!
 `mmv` takes as its argument(s) a utility and that utilities arguments and uses
